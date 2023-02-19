@@ -38,7 +38,7 @@ func getHistory(isInitialBuild bool, selfUrl string) []Entry {
 		return []Entry{}
 	}
 
-	res, err := http.Get(selfUrl)
+	res, err := http.Get(selfUrl + "/history.json")
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -75,7 +75,10 @@ func main() {
 	entries := append(history, status)
 
 	// Write history
-	raw, _ := json.Marshal(entries)
+	raw, err := json.Marshal(entries)
+	if err != nil {
+		log.Fatalln(err)
+	}
 	ioutil.WriteFile(filepath.Join("static", "history.json"), []byte(raw), 0644)
 
 	// Load template
@@ -92,5 +95,8 @@ func main() {
 
 	// Write index.html
 	result := tpl.String()
-	ioutil.WriteFile(filepath.Join("static", "index.html"), []byte(result), 0644)
+	err = ioutil.WriteFile(filepath.Join("static", "index.html"), []byte(result), 0644)
+	if err := template.Execute(&tpl, TemplateData{checkUrl, entries}); err != nil {
+		log.Fatalln(err)
+	}
 }
