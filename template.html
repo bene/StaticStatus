@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Status</title>
+    <link href="main.css" rel="stylesheet" />
+  </head>
+  <body class="dark:bg-gray-900 dark:text-gray-400">
+    <main class="max-w-xl mx-auto px-4 flex flex-col gap-8">
+      <h1 class="text-xl text-center mt-8">{{ .CheckUrl }}</h1>
+
+      <div class="flex flex-row-reverse overflow-scroll gap-0.5">
+        {{range .Entries}} {{ if .Reachable }}
+        <div
+          title="{{.DateTime}}"
+          class="bg-green-100 h-8 w-2 rounded-xl"
+        ></div>
+        {{ else }}
+        <div title="{{.DateTime}}" class="bg-red-100 h-8 w-2 rounded-xl"></div>
+        {{ end }} {{end}}
+      </div>
+
+      <div class="flex flex-col-reverse gap-2">
+        {{range .Entries}}
+        <div
+          class="flex justify-between bg-gray-50 dark:bg-gray-800 p-4 rounded-xl"
+        >
+          <p>{{.DateTime}}</p>
+          {{ if .Reachable }}
+          <div class="text-green-500">Status {{.Status}}</div>
+          {{ else }}
+          <div class="text-red-500">Status {{.Status}}</div>
+          {{ end }}
+        </div>
+        {{end}}
+      </div>
+    </main>
+  </body>
+</html>
