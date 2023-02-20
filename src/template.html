@@ -11,18 +11,21 @@
     <main class="max-w-xl mx-auto px-4 flex flex-col gap-8">
       <h1 class="text-xl text-center mt-8">{{ .CheckUrl }}</h1>
 
-      <div class="flex flex-row-reverse overflow-scroll gap-0.5">
+      <div class="grid grid-cols-[repeat(60,minmax(0,1fr))] gap-0.5">
         {{range .Entries}} {{ if .Reachable }}
         <div
           title="{{.DateTime}}"
-          class="bg-green-100 h-8 w-2 rounded-xl"
+          class="aspect-square rounded-sm bg-green-200 h-8 w-2"
         ></div>
         {{ else }}
-        <div title="{{.DateTime}}" class="bg-red-100 h-8 w-2 rounded-xl"></div>
+        <div
+          title="{{.DateTime}}"
+          class="aspect-square rounded-sm bg-red-200 h-8 w-2"
+        ></div>
         {{ end }} {{end}}
       </div>
 
-      <div class="flex flex-col-reverse gap-2">
+      <div class="w-full max-w-xl mx-auto flex flex-col-reverse gap-2 mb-4">
         {{range .Entries}}
         <div
           class="flex justify-between bg-gray-50 dark:bg-gray-800 p-4 rounded-xl"
