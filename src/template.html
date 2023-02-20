@@ -8,19 +8,19 @@
     <link href="main.css" rel="stylesheet" />
   </head>
   <body class="dark:bg-gray-900 dark:text-gray-400">
-    <main class="max-w-xl mx-auto px-4 flex flex-col gap-8">
+    <main class="max-w-3xl mx-auto px-4 flex flex-col gap-8">
       <h1 class="text-xl text-center mt-8">{{ .CheckUrl }}</h1>
 
       <div class="grid grid-cols-[repeat(60,minmax(0,1fr))] gap-0.5">
         {{range .Entries}} {{ if .Reachable }}
         <div
           title="{{.DateTime}}"
-          class="aspect-square rounded-sm bg-green-200 h-8 w-2"
+          class="aspect-square rounded-sm bg-green-200"
         ></div>
         {{ else }}
         <div
           title="{{.DateTime}}"
-          class="aspect-square rounded-sm bg-red-200 h-8 w-2"
+          class="aspect-square rounded-sm bg-red-200"
         ></div>
         {{ end }} {{end}}
       </div>
