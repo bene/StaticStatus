@@ -18,6 +18,8 @@ All of the following environment variables are required.
 | `BUILD_WEBHOOK`         | A build hook URL to redeploy the status page.                                                                        | `https://api.netlify.com`    |
 | `AWS_LAMBDA_JS_RUNTIME` | Static value to execute Lambda function in Node 18.                                                                  | `nodejs18.x`                 |
 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bene/StaticStatus)
+
 ## Concept
 
 This kinda works like blockchain. A scheduled Netlify functions redeploys the
