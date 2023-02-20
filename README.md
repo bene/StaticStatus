@@ -1,7 +1,7 @@
 # StaticStatus
 
-StatusStatus is the most easy way to spin up a status page. There is no need for
-a database or a backend at all. All you need to do is to clone this repo and
+StatusStatus is the easiest way to spin up a status page. There is no need for a
+database or a backend at all. All you need to do is to clone this repo and
 deploy it via Netlify.
 
 ## Deployment
