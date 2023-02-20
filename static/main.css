@@ -538,16 +538,12 @@ video {
   aspect-ratio: 1 / 1;
 }
 
-.h-8 {
-  height: 2rem;
-}
-
-.w-2 {
-  width: 0.5rem;
-}
-
 .w-full {
   width: 100%;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .max-w-xl {
