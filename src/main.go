@@ -82,7 +82,7 @@ func main() {
 	ioutil.WriteFile(filepath.Join("static", "history.json"), []byte(raw), 0644)
 
 	// Load template
-	template, err := template.ParseFiles("template.html")
+	template, err := template.ParseFiles(filepath.Join("src", "template.html"))
 	if err != nil {
 		log.Fatalln(err)
 	}
