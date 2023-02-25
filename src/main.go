@@ -74,6 +74,11 @@ func main() {
 	history := getHistory(isInitialBuild, selfUrl)
 	entries := append(history, status)
 
+	// Limit number of stored entries
+	if len(entries) > 1440 {
+		entries = entries[len(entries)-1440:]
+	}
+
 	// Write history
 	raw, err := json.Marshal(entries)
 	if err != nil {
