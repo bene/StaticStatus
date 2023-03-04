@@ -22,8 +22,8 @@ All of the following environment variables are required.
 
 ## Concept
 
-This kinda works like blockchain. A scheduled Netlify functions redeploys the
-status page every minute. During the build process not only the current status
+This kinda works like a blockchain. A scheduled Netlify function redeploys the
+status page every minute. During the build process not only the new status
 is checked but also the status history is fetched from the currently deployed
 status page. The new build attaches the new status to the history and deploys
 the next history.
@@ -31,13 +31,13 @@ the next history.
 ## Cost
 
 The price for this 0-backend status page is payed in Netlify build minutes. A
-single deploy has an average build time of 9 seconds which results in the
-following prices:
+single deploy has an average build time of 10 seconds which results in the
+following prices per month:
 
 | Interval  | Price        |
 | --------- | ------------ |
-| 1 minute  | 6570 minutes |
-| 5 minutes | 1314 minutes |
+| 1 minute  | 7300 minutes |
+| 5 minutes | 1460 minutes |
 
 ## Disclaimer
 
